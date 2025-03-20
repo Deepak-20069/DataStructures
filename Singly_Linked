@@ -1,0 +1,19 @@
+package CONCEPTS_Day2;
+
+public class Singly_Linked {
+	public static void main(String args[])
+	{
+		Linked_ex l=new Linked_ex();
+		l.insertAtBegin(67);
+		l.insertAtBegin(79);
+		l.insertAtBegin(89);
+		l.insertAtBegin(220);
+		l.insertAtBegin(33);
+		l.insertAtBegin(104);
+		l.insertAtBegin(777);
+		l.display();
+		l.findMiddle();
+		l.display();
+	}
+
+}
