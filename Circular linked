@@ -1,0 +1,78 @@
+package CONCEPTS_Day4;
+
+public class circular_linked {
+    Node last;
+
+    class Node {
+        int data;
+        Node next;
+
+        Node(int val) {
+            data = val;
+            next = null;
+        }
+    }
+
+    circular_linked() {
+        last = null;
+    }
+
+    public void insertAtBegin(int val) { 
+        Node newNode = new Node(val);
+        if (last == null) {
+            last = newNode;
+            last.next = last;
+        } else {
+            newNode.next = last.next;
+            last.next = newNode;
+         
+        }
+    }
+    public void display() {
+       
+        Node temp = last.next;
+        
+        while (temp != last) {
+            System.out.print(temp.data + " → ");
+            temp = temp.next;
+        }
+        System.out.println(temp.data ); 
+      }
+
+    public void insertAtEnd(int val) { 
+        Node newNode = new Node(val);
+        if (last == null) {
+            last = newNode;
+            last.next = last;
+        } else {
+            newNode.next = last.next;
+            last.next = newNode;
+         
+        }
+          
+    }
+    public void deleteAtBegin() {
+    	Node temp=last.next;
+    	last.next=last.next;
+    	temp.next=null;
+		
+	}
+    public void deleteAtEnd() {
+    	Node temp=last.next;
+    	last.next=last.next;
+    	temp.next=null;
+		
+	}
+
+	public static void main(String[] args) {
+    	circular_linked list = new circular_linked();
+
+        list.insertAtBegin(10);
+        list.insertAtBegin(20);
+        list.insertAtBegin(0);
+
+        System.out.println("Circular Linked List:");
+        list.display();
+    }
+    }
+
